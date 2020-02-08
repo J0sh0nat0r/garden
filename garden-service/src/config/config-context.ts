@@ -20,6 +20,7 @@ import { joi } from "../config/common"
 import { KeyedSet } from "../util/keyed-set"
 import { RuntimeContext } from "../runtime-context"
 import { deline } from "../util/string"
+import { DOCS_BASE_URL } from "../constants"
 
 export type ContextKey = string[]
 
@@ -285,7 +286,7 @@ class ProviderContext extends ConfigContext {
         /.*/,
         joiPrimitive().description(
           deline`
-          The provider config key value. Refer to individual [provider references](../providers/README.md) for details.
+          The provider config key value. Refer to individual [provider references](${DOCS_BASE_URL}/providers) for details.
           `
         )
       )
@@ -299,7 +300,7 @@ class ProviderContext extends ConfigContext {
     joiIdentifierMap(
       joiPrimitive().description(
         deline`
-        The provider output value. Refer to individual [provider references](../providers/README.md) for details.
+        The provider output value. Refer to individual [provider references](${DOCS_BASE_URL}/providers) for details.
         `
       )
     )
@@ -373,7 +374,7 @@ export class ModuleContext extends ConfigContext {
     joiIdentifierMap(
       joiPrimitive().description(
         deline`
-        The module output value. Refer to individual [module type references](../module-types/README.md) for details.
+        The module output value. Refer to individual [module type references](${DOCS_BASE_URL}/module-types) for details.
         `
       )
     )
@@ -418,7 +419,7 @@ export class ServiceRuntimeContext extends ConfigContext {
     joiIdentifierMap(
       joiPrimitive().description(
         deline`
-        The service output value. Refer to individual [module type references](../module-types/README.md) for details.
+        The service output value. Refer to individual [module type references](${DOCS_BASE_URL}/module-types) for details.
         `
       )
     )
@@ -449,7 +450,7 @@ export class TaskRuntimeContext extends ServiceRuntimeContext {
     joiIdentifierMap(
       joiPrimitive().description(
         deline`
-        The task output value. Refer to individual [module type references](../module-types/README.md) for details.
+        The task output value. Refer to individual [module type references](${DOCS_BASE_URL}/module-types) for details.
         `
       )
     )
